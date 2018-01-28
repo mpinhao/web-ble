@@ -17,7 +17,12 @@
     
     if (navigator.bluetooth) {
       log('Bluetooth is enabled');
-      onButtonClick();
+      
+      $('#init').click(function () {
+        onButtonClick();
+      });
+      
+      
     } else {
       log('Web Bluetooth API is not available. Please make sure the "Experimental Web Platform features" flag is enabled.');
       
@@ -29,7 +34,7 @@
   
   
   function log(msg) {
-     $('body').prepend("<p>"+msg+"</p>");
+     $('#content').prepend("<p>"+msg+"</p>");
   }
   
   
@@ -146,6 +151,14 @@ function getDeviceType(value) {
 </head>
 
 <body>
+  <header>
+    
+    <a id="init" href="#">BLE TEST</a>
+  </header>
+  <section id="content">
+    
+  </section>
+  
  BLE TEST
 </body>
 </html>
