@@ -13,7 +13,18 @@
 <script>
   $( document ).ready(function() {
     log('jquery ready');
-    onButtonClick();
+    
+    
+    if (navigator.bluetooth) {
+      log('Bluetooth is enabled');
+      onButtonClick();
+    } else {
+      log('Web Bluetooth API is not available. Please make sure the "Experimental Web Platform features" flag is enabled.');
+      
+    }
+    
+    
+    
 });
   
   
